@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Leg.png" type="Texture" id=1]
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Chest.png" type="Texture" id=2]
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Head.png" type="Texture" id=3]
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Arm.png" type="Texture" id=4]
+[ext_resource path="res://Teddy-vs-Machine/Scenes/romualdo.gd" type="Script" id=1]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/Leg.png" type="Texture" id=2]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/Chest.png" type="Texture" id=3]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/Head.png" type="Texture" id=4]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/Arm.png" type="Texture" id=5]
 
 [node name="romualdo" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Pierna Izquierda" type="RigidBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -8, 28.8 )
 
 [node name="Sprite" type="Sprite" parent="Pierna Izquierda"]
-texture = ExtResource( 1 )
+rotation = -0.368696
+scale = Vector2( 0.035, 0.035 )
+texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pierna Izquierda"]
 polygon = PoolVector2Array( 0, 13.2, -4, 9.2, -4, -10.8, -2, -12.8, 2, -8.8, 4, -8.8, 4, 9.2 )
@@ -24,11 +27,12 @@ node_b = NodePath("..")
 disable_collision = false
 
 [node name="Pierna Derecha" type="RigidBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 8, 28.8 )
 
 [node name="Sprite" type="Sprite" parent="Pierna Derecha"]
-texture = ExtResource( 1 )
+rotation = 2.71508
+scale = Vector2( 0.035, 0.035 )
+texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pierna Derecha"]
 polygon = PoolVector2Array( 0, 13.2, 4, 9.2, 4, -10.8, 2, -12.8, -2, -8.8, -4, -8.8, -4, 9.2 )
@@ -39,10 +43,10 @@ node_a = NodePath("..")
 node_b = NodePath("../../Chest")
 
 [node name="Chest" type="RigidBody2D" parent="."]
-editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="Chest"]
-texture = ExtResource( 2 )
+scale = Vector2( 0.4, 0.3 )
+texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Chest"]
 polygon = PoolVector2Array( -12, -12, -6, -18, 6, -18, 12, -12, 12, 12, 6, 18, -6, 18, -12, 12 )
@@ -52,7 +56,8 @@ editor/display_folded = true
 position = Vector2( 0, -28.8 )
 
 [node name="Sprite" type="Sprite" parent="Cabeza"]
-texture = ExtResource( 3 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cabeza"]
 polygon = PoolVector2Array( -12, -4, -6, -12, 6, -12, 12, -4, 12, 4, 4, 10, -4, 10, -12, 4 )
@@ -67,7 +72,9 @@ position = Vector2( -19.2, -10 )
 rotation = 0.785398
 
 [node name="Sprite" type="Sprite" parent="Brazo Izquierdo"]
-texture = ExtResource( 4 )
+rotation = -0.509933
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brazo Izquierdo"]
 polygon = PoolVector2Array( 0, -14, -4, -10, -4, 10, 0, 14, 4, 10, 4, -10 )
@@ -82,7 +89,9 @@ position = Vector2( 20, -10 )
 rotation = -0.785398
 
 [node name="Sprite" type="Sprite" parent="Brazo Derecho"]
-texture = ExtResource( 4 )
+rotation = 2.69152
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Brazo Derecho"]
 polygon = PoolVector2Array( 0, -14, -4, -10, -4, 10, 0, 14, 4, 10, 4, -10 )

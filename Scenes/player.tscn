@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Teddy-vs-Machine/Scenes/player.gd" type="Script" id=1]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/canon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 16 )
+
+[node name="player" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( 88, 536 )
+script = ExtResource( 1 )
+fuerza_disparo = 4000.0
+
+[node name="spr_canon" type="Sprite" parent="."]
+position = Vector2( -9.53674e-007, 3.00001 )
+scale = Vector2( 0.547009, 0.492754 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="spawn" type="Position2D" parent="."]
+position = Vector2( 100, 0 )
+

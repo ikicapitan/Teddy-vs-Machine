@@ -1,114 +1,41 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Leg.png" type="Texture" id=1]
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Chest.png" type="Texture" id=2]
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Head.png" type="Texture" id=3]
-[ext_resource path="res://Teddy-vs-Machine/Sprites/Arm.png" type="Texture" id=4]
+[ext_resource path="res://Teddy-vs-Machine/Scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://Teddy-vs-Machine/Scenes/romualdo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/Cachila.png" type="Texture" id=3]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/machine1.png" type="Texture" id=4]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/machinet1.png" type="Texture" id=5]
+[ext_resource path="res://Teddy-vs-Machine/Sprites/coin.png" type="Texture" id=6]
+[ext_resource path="res://Teddy-vs-Machine/Scenes/player.tscn" type="PackedScene" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 420, 10 )
+[node name="main" type="CanvasModulate" groups=[
+"main",
+]]
+script = ExtResource( 1 )
+romualdo = ExtResource( 2 )
 
-[node name="main" type="Node2D"]
+[node name="nivel" type="Node2D" parent="." groups=[
+"nivel",
+]]
 
-[node name="nivel" type="Node2D" parent="."]
-
-[node name="romualdo" type="Node2D" parent="nivel"]
-position = Vector2( 110, 92 )
-
-[node name="Pierna Izquierda" type="RigidBody2D" parent="nivel/romualdo"]
-editor/display_folded = true
-position = Vector2( -8, 28.8 )
-
-[node name="Sprite" type="Sprite" parent="nivel/romualdo/Pierna Izquierda"]
-texture = ExtResource( 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nivel/romualdo/Pierna Izquierda"]
-polygon = PoolVector2Array( 0, 13.2, -4, 9.2, -4, -10.8, -2, -12.8, 2, -8.8, 4, -8.8, 4, 9.2 )
-
-[node name="PinJoint2D" type="PinJoint2D" parent="nivel/romualdo/Pierna Izquierda"]
-position = Vector2( 0.610432, -10.8 )
-node_a = NodePath("../../Chest")
-node_b = NodePath("..")
-disable_collision = false
-
-[node name="Pierna Derecha" type="RigidBody2D" parent="nivel/romualdo"]
-editor/display_folded = true
-position = Vector2( 8, 28.8 )
-
-[node name="Sprite" type="Sprite" parent="nivel/romualdo/Pierna Derecha"]
-texture = ExtResource( 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nivel/romualdo/Pierna Derecha"]
-polygon = PoolVector2Array( 0, 13.2, 4, 9.2, 4, -10.8, 2, -12.8, -2, -8.8, -4, -8.8, -4, 9.2 )
-
-[node name="PinJoint2D" type="PinJoint2D" parent="nivel/romualdo/Pierna Derecha"]
-position = Vector2( -0.366261, -10.8657 )
-node_a = NodePath("..")
-node_b = NodePath("../../Chest")
-
-[node name="Chest" type="RigidBody2D" parent="nivel/romualdo"]
-editor/display_folded = true
-
-[node name="Sprite" type="Sprite" parent="nivel/romualdo/Chest"]
-texture = ExtResource( 2 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nivel/romualdo/Chest"]
-polygon = PoolVector2Array( -12, -12, -6, -18, 6, -18, 12, -12, 12, 12, 6, 18, -6, 18, -12, 12 )
-
-[node name="Camera2D" type="Camera2D" parent="nivel/romualdo/Chest"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-
-[node name="Cabeza" type="RigidBody2D" parent="nivel/romualdo"]
-editor/display_folded = true
-position = Vector2( 0, -28.8 )
-
-[node name="Sprite" type="Sprite" parent="nivel/romualdo/Cabeza"]
+[node name="spr_cprovis" type="Sprite" parent="nivel"]
+position = Vector2( 792, 482 )
 texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nivel/romualdo/Cabeza"]
-polygon = PoolVector2Array( -12, -4, -6, -12, 6, -12, 12, -4, 12, 4, 4, 10, -4, 10, -12, 4 )
-
-[node name="PinJoint2D" type="PinJoint2D" parent="nivel/romualdo/Cabeza"]
-position = Vector2( 0, 10.486 )
-node_a = NodePath("..")
-node_b = NodePath("../../Chest")
-
-[node name="Brazo Izquierdo" type="RigidBody2D" parent="nivel/romualdo"]
-editor/display_folded = true
-position = Vector2( -19.2, -10 )
-rotation = 0.785398
-
-[node name="Sprite" type="Sprite" parent="nivel/romualdo/Brazo Izquierdo"]
+[node name="spr_machine" type="Sprite" parent="nivel"]
+position = Vector2( 789.5, 489 )
 texture = ExtResource( 4 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nivel/romualdo/Brazo Izquierdo"]
-polygon = PoolVector2Array( 0, -14, -4, -10, -4, 10, 0, 14, 4, 10, 4, -10 )
+[node name="spr_machinet" type="Sprite" parent="nivel"]
+position = Vector2( 789.5, 401 )
+texture = ExtResource( 5 )
 
-[node name="PinJoint2D" type="PinJoint2D" parent="nivel/romualdo/Brazo Izquierdo"]
-position = Vector2( 1.93718, -14.2282 )
-node_a = NodePath("..")
-node_b = NodePath("../../Chest")
+[node name="coin" type="Sprite" parent="nivel"]
+position = Vector2( 481.5, 362.5 )
+scale = Vector2( 0.169903, 0.157143 )
+texture = ExtResource( 6 )
 
-[node name="Brazo Derecho" type="RigidBody2D" parent="nivel/romualdo"]
-editor/display_folded = true
-position = Vector2( 20, -10 )
-rotation = -0.785398
+[node name="target" type="Position2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="nivel/romualdo/Brazo Derecho"]
-texture = ExtResource( 4 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nivel/romualdo/Brazo Derecho"]
-polygon = PoolVector2Array( 0, -14, -4, -10, -4, 10, 0, 14, 4, 10, 4, -10 )
-
-[node name="PinJoint2D" type="PinJoint2D" parent="nivel/romualdo/Brazo Derecho"]
-position = Vector2( -2.27117, -14.6958 )
-node_a = NodePath("..")
-node_b = NodePath("../../Chest")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="nivel"]
-position = Vector2( 262, 350 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nivel/StaticBody2D"]
-shape = SubResource( 1 )
+[node name="player" parent="." instance=ExtResource( 7 )]
 
