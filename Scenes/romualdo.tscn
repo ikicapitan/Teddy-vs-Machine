@@ -10,6 +10,7 @@
 script = ExtResource( 1 )
 
 [node name="Pierna Izquierda" type="RigidBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -8, 28.8 )
 
 [node name="Sprite" type="Sprite" parent="Pierna Izquierda"]
@@ -27,6 +28,7 @@ node_b = NodePath("..")
 disable_collision = false
 
 [node name="Pierna Derecha" type="RigidBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 8, 28.8 )
 
 [node name="Sprite" type="Sprite" parent="Pierna Derecha"]
@@ -51,6 +53,8 @@ texture = ExtResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Chest"]
 polygon = PoolVector2Array( -12, -12, -6, -18, 6, -18, 12, -12, 12, 12, 6, 18, -6, 18, -12, 12 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Chest"]
+
 [node name="Cabeza" type="RigidBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 0, -28.8 )
@@ -68,6 +72,7 @@ node_a = NodePath("..")
 node_b = NodePath("../../Chest")
 
 [node name="Brazo Izquierdo" type="RigidBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -19.2, -10 )
 rotation = 0.785398
 
@@ -85,6 +90,7 @@ node_a = NodePath("..")
 node_b = NodePath("../../Chest")
 
 [node name="Brazo Derecho" type="RigidBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 20, -10 )
 rotation = -0.785398
 
@@ -101,3 +107,4 @@ position = Vector2( -2.27117, -14.6958 )
 node_a = NodePath("..")
 node_b = NodePath("../../Chest")
 
+[connection signal="screen_exited" from="Chest/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
