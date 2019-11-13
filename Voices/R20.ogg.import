@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/R20.ogg-4fef6a7e3ca00445e8df08f111a405dd.oggstr"
+
+[deps]
+
+source_file="res://Teddy-vs-Machine/Voices/R20.ogg"
+dest_files=[ "res://.import/R20.ogg-4fef6a7e3ca00445e8df08f111a405dd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

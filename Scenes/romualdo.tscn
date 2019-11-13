@@ -10,8 +10,10 @@
 script = ExtResource( 1 )
 
 [node name="Pierna Izquierda" type="RigidBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -8, 28.8 )
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="Pierna Izquierda"]
 rotation = -0.368696
@@ -30,6 +32,9 @@ disable_collision = false
 [node name="Pierna Derecha" type="RigidBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 8, 28.8 )
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="Pierna Derecha"]
 rotation = 2.71508
@@ -45,6 +50,10 @@ node_a = NodePath("..")
 node_b = NodePath("../../Chest")
 
 [node name="Chest" type="RigidBody2D" parent="."]
+editor/display_folded = true
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="Chest"]
 scale = Vector2( 0.4, 0.3 )
@@ -58,6 +67,9 @@ polygon = PoolVector2Array( -12, -12, -6, -18, 6, -18, 12, -12, 12, 12, 6, 18, -
 [node name="Cabeza" type="RigidBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 0, -28.8 )
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="Cabeza"]
 scale = Vector2( 0.15, 0.15 )
@@ -75,6 +87,9 @@ node_b = NodePath("../../Chest")
 editor/display_folded = true
 position = Vector2( -19.2, -10 )
 rotation = 0.785398
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="Brazo Izquierdo"]
 rotation = -0.509933
@@ -93,6 +108,9 @@ node_b = NodePath("../../Chest")
 editor/display_folded = true
 position = Vector2( 20, -10 )
 rotation = -0.785398
+continuous_cd = 2
+contacts_reported = 3
+contact_monitor = true
 
 [node name="Sprite" type="Sprite" parent="Brazo Derecho"]
 rotation = 2.69152
